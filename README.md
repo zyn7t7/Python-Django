@@ -1,2 +1,2 @@
 # Python-Django
-initial file
+read the message above under every project..
