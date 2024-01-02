@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light navbar-expand-md navigation-clean sticky-top" style="background: rgb(18,12,12);">
+    <div class="container">
+        <a class="navbar-brand" href="#" style="color: rgb(220,181,181);">Blog</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+            <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item" style="color: var(--bs-indigo);">
+                    <a class="nav-link active" href="{% url 'home' %}" style="color: rgb(110,206,76);">Home</a>
+                </li><li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}" style="color: rgb(110,206,76);">About</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}"  style="color: rgb(110,206,76);">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'post' %}"  style="color: rgb(110,206,76);">Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'addpost' %}"  style="color: rgb(110,206,76);">Add Post</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signout' %}"  style="color: rgb(110,206,76);">signout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup' %}"  style="color: rgb(110,206,76);">signup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signin' %}"  style="color: rgb(110,206,76);">signin</a>
+                </li>
+                {% endif %}
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+<hr>

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Post{% endblock title %}
+{% block body %}
+<section class="article-clean">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2" style="background: rgb(18,12,12);">
+                <div class="intro">
+                    <hr>
+                    <h1 class="text-center" style="background: rgb(18,12,12);color: rgb(172,186,149);">BLOG POSTS</h1>                                          
+                        <h2 style="color: rgb(172,186,149); font-weight:300;" class="text-center" >Add Your Post   
+                             <br>  
+                        <a href="{% url "addpost" %}">
+                        <i class="icon ion-plus" style="color: rgb(110,206,76);"></i>
+                        </a>
+                    </h2>                                           
+                </div>
+                <hr>
+                <div class="text">
+                    {% if user.is_authenticated %}
+                    {% for b in get %}'
+                    <h2 style="color: rgb(172,186,149);">{{b.title}} </h2>
+                     
+                    <p style="color: rgb(177,192,215);">{{b.des}}</p> 
+                    <div class="text-center"> 
+                        <div class="d-inline">
+                            <a href="{% url "update" b.id %}" class="btn btn-info d-inline mt-2 mb-4">Edit</a>
+                            <form action="{% url "delete" b.id %}" class="d-inline">
+                                {% if perms.Blogpost.delete_Blog %}
+                                <input class="btn btn-danger mt-2 mb-2" type="submit" value="Delete">
+                                {% endif %}
+                            </form>
+                        </div>                 
+                            {% comment %} <a href="{% url "update" b.id %}">                               
+                                 <i class="icon ion-pencil" style="color: rgb(110,206,76);"></i> 
+                            </a>                        
+                            {% if perms.blogpost.delete_blog %}
+                            <a href="{% url "delete" b.id %}">
+                                 <i class="icon ion-delete" style="color: rgb(110,206,76);"></i> 
+                            </a>              
+                            {% endif %}                  {% endcomment %}
+                    </div>                  
+                    {% endfor %}
+                    {% endif %}
+                    <h2 style="color: rgb(172,186,149);">Aliquam In Arcu </h2>
+                    <p style="color: rgb(177,192,215);">Sed lobortis mi. Suspendisse vel placerat ligula. <span style="text-decoration: underline;">Vivamus</span> ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                    <p style="color: rgb(177,192,215);">Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac lacus. <strong>Ut vehicula rhoncus</strong> elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit <em>pulvinar dict</em> vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                    <h2 style="color: rgb(172,186,149);">Aliquam In Arcu </h2>                   
+                    <p style="color: rgb(177,192,215);">Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                    <figure class="figure d-block"></figure>
+                    <p style="color: rgb(177,192,215);">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+{% endblock body %}         

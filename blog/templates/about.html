@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About{% endblock title %}
+{% block body %}
+<section class="testimonials-clean">
+    <div class="container" style="background: rgb(18,12,12);">
+        <div class="intro">
+            <h2 class="text-center" style="color: rgb(172,186,149);">About us</h2>
+            <p class="text-center" style="color: rgb(177,192,215);">Our customers love us! Read what they have to say below. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
+        </div>
+        <div class="row people">
+            <div class="col-md-6 col-lg-4 item">
+                <div class="box" style="background: rgb(18,12,12);">
+                    <p class="description" style="color: rgb(177,192,215);">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in .</p>
+                </div>
+                <div class="author"><img class="rounded-circle" src="{% static "assets/img/1.jpg" %}">
+                    <h5 class="name" style="color: rgb(172,186,149);">Ben Johnson</h5>
+                    <p class="title">CEO of Company Inc.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 item">
+                <div class="box" style="background: rgb(18,12,12);">
+                    <p class="description" style="color: rgb(177,192,215);">Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id.</p>
+                </div>
+                <div class="author"><img class="rounded-circle" src="{% static "assets/img/3.jpg" %}">
+                    <h5 class="name" style="color: rgb(172,186,149);">Carl Kent</h5>
+                    <p class="title">Founder of Style Co.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 item">
+                <div class="box" style="background: rgb(18,12,12);">
+                    <p class="description" style="color: rgb(177,192,215);">Aliquam varius finibus est, et interdum justo suscipit. Vulputate quis leo in, vehialiquam in tellus /</p>
+                </div>
+                <div class="author"><img class="rounded-circle" src="{% static "assets/img/2.jpg" %}">
+                    <h5 class="name" style="color: rgb(172,186,149);">Emily Clark</h5>
+                    <p class="title">Owner of Creative Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}
+        
+       

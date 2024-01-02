@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static "assets/bootstrap/css/bootstrap.min.css" %}">
+        <link rel="stylesheet" href="{% static "assets/fonts/font-awesome.min.css" %}">
+        <link rel="stylesheet" href="{% static "assets/fonts/ionicons.min.css" %}">
+        <link rel="stylesheet" href="{% static "assets/css/styles.min.css" %}">
+        <link rel="stylesheet" href="{% static "assets/css/Footer-Basic.css" %}">
+        <link rel="stylesheet" href="{% static "assets/css/Testimonials.css" %}">
+        <link rel="stylesheet" href="{% static "assets/css/styles.css" %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    </head>
+    <body style="background: rgb(18,12,12);">
+        <div class="container" style="background: rgb(18,12,12);">
+            {% comment %} navbar {% endcomment %}
+            {% include "navbar.html" %}
+                     
+            {% block body %}            
+            {% endblock body %}
+                {% comment %} footer {% endcomment %}
+                    <footer class="footer-basic" style="background: rgb(18,12,12);">
+                        <div class="social"><a href="#">
+                            <i class="icon ion-social-instagram" style="color: rgb(110,206,76);"></i>
+                        </a><a href="#">
+                            <i class="icon ion-social-snapchat" style="color: rgb(110,206,76);"></i>
+                        </a>
+                        <a href="#">
+                            <i class="icon ion-social-twitter" style="color: rgb(110,206,76);"></i>
+                        </a>
+                        <a href="#">
+                            <i class="icon ion-social-facebook" style="color: rgb(110,206,76);"></i>
+                        </a>
+                    </div>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="#" style="color: rgb(110,206,76);">Home</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: rgb(110,206,76);">Services</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: rgb(110,206,76);">About</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: rgb(110,206,76);">Terms</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: rgb(110,206,76);">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="copyright">Company Name © 2023</p>
+                </footer>
+            </div>
+            <script src="{% static "assets/bootstrap/js/bootstrap.min.js" %}"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+            <script src="{% static "assets/js/script.min.js" %}"></script>
+        </body>
+</html>       
